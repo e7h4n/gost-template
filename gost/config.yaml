@@ -1,0 +1,48 @@
+services:
+  - name: service-0
+    addr: :443
+    handler:
+      type: http2
+      auth:
+        username:
+        password: YOUR_PASSWORD_HERE_AND_LEAVE_USERNAME_EMPTY
+    listener:
+      type: http2
+      tls:
+        certFile: /etc/letsencrypt/live/YOUR_FULL_DOMAIN_HERE_FOR_EXAMPLE_DOCS_DOT_FACEBOOK_DOT_COM/fullchain.pem
+        keyFile: /etc/letsencrypt/live/YOUR_FULL_DOMAIN_HERE_FOR_EXAMPLE_DOCS_DOT_FACEBOOK_DOT_COM/privkey.pem
+
+chains:
+  - name: chain-0
+    hops:
+      - name: hop-0
+        bypass: warp
+        nodes:
+          - name: node-0
+            addr: cloudflare-warp:40001
+            connector:
+              type: socks5
+              metadata:
+                notls: "true"
+            dialer:
+              type: tcp
+              tls:
+                serverName: cloudflare-warp
+              metadata:
+                notls: "true"
+
+bypasses:
+  - name: warp
+    whitelist: true
+    matchers:
+      - '*.openai.com'
+      - '*.chatgpt.com'
+      - '*.ubuntu.com'
+      - openai.com
+      - ubuntu.com
+      - chatgpt.com
+      - ipinfo.io
+
+log:
+  format: text
+  level: warn

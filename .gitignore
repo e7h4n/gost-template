@@ -1,0 +1,23 @@
+# Environment variables
+.env.local
+.env.*.local
+
+# Certificates
+*.pem
+*.key
+*.crt
+*.cer
+
+# Logs
+*.log
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# IDE
+.vscode/
+.idea/
+
+# Docker volumes
+volumes/
