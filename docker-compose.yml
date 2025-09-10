@@ -13,7 +13,7 @@ services:
       - certbot
     restart: always
     ports:
-      - 8443:443
+      - 443:443
     volumes:
       - letsencrypt_data:/etc/letsencrypt/:ro
       - ./gost/:/etc/gost/:ro
@@ -39,4 +39,5 @@ volumes:
   acme:
   warp:
   letsencrypt_data:
+
 
