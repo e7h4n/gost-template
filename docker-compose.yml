@@ -7,13 +7,6 @@ services:
     volumes:
       - warp:/var/lib/cloudflare-warp/:rw
 
-  cloudflare-ddns:
-    image: oznu/cloudflare-ddns
-    environment:
-      - API_KEY=YOUR_CLOUDFLARE_API_TOKEN
-      - ZONE=YOUR_MAIN_DOMAIN_WITHOUT_SUBDOMAIN_FOR_EXAMPLE_FACEBOOK_DOT_COM
-      - SUBDOMAIN=YOUR_SUB_DOMAIN_WITHOUT_MAIN_DOMAIN_FOR_EXAMPLE_DOCS
-
   gost:
     image: gogost/gost
     depends_on:
@@ -46,3 +39,4 @@ volumes:
   acme:
   warp:
   letsencrypt_data:
+
