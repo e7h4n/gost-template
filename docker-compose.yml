@@ -1,12 +1,6 @@
 version: "3.9"
 
 services:
-  cloudflare-warp:
-    image: e7h4n/cloudflare-warp
-    restart: always
-    volumes:
-      - warp:/var/lib/cloudflare-warp/:rw
-
   gost:
     image: gogost/gost
     depends_on:
@@ -39,5 +33,6 @@ volumes:
   acme:
   warp:
   letsencrypt_data:
+
 
 
