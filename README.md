@@ -20,8 +20,14 @@ Before getting started, ensure you have:
    - [Create API token here](https://dash.cloudflare.com/profile/api-tokens)
 
 2. **VPS (Virtual Private Server)**
-   - **Recommended Specs**: 20GB storage, 1GB RAM, 1TB bandwidth
-   - **Recommended Provider**: Bandwagon Host (搬瓦工) with CN2 GIA network
+   - **Recommended Provider**: [Bandwagon Host](https://bandwagonhost.com/aff.php?aff=80925)
+   - **Recommended Plan**: Los Angeles USCA_8 (CN2 GIA network)
+     - 20 GB RAID-10 SSD Storage
+     - 1 GB RAM
+     - 2x CPU Cores
+     - 1 TB/month Transfer
+     - 2.5 Gigabit Link Speed
+     - $49.99 / 3 months (~$16.66/month)
    - SSH access with root privileges
    - Public IP address
 
